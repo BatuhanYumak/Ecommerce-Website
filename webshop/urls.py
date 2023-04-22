@@ -9,4 +9,6 @@ from django.shortcuts import render
 urlpatterns = [
     # Dit is de homepage
     path('', views.index, name='index'),
+    path('console', views.console, name='console'),
+
 ]
