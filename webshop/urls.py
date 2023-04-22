@@ -11,4 +11,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('console', views.console, name='console'),
 
+    
+
 ]

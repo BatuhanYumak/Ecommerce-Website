@@ -15,3 +15,4 @@ def console(request):
     products = Product.objects.all()
     context = {'products': products}
     return render(request, 'console.html', context)
+
