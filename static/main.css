@@ -6,4 +6,22 @@
     width: 200px; /* of een andere gewenste breedte */
     margin-top: 100px;
   }
+
+  .Switch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px; /* of een andere gewenste breedte */
+    margin-top: 100px;
+  }
+
+  .Xbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px; /* of een andere gewenste breedte */
+    margin-top: 100px;
+  }
   
