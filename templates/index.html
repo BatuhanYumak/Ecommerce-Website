@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script src="{% static 'script.js' %}"></script>
-    {% comment %} <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css" /> {% endcomment %}
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css" />
 
     <title>Document</title>
 </head>
@@ -22,24 +22,26 @@
             </a>
             
             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+              <li class="flex items-center">
                 <div class="relative">
-                    <button class="flex items-center justify-between w-full px-4 py-2 font-semibold text-white bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-gray" onclick="toggleDropdown()">
-                      <span class="mr-2">Category</span>
-                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                        <path d="M7 10l5 5 5-5z" />
-                      </svg>
-                    </button>
-                    <div class="absolute right-0 z-10 py-2 mt-1 bg-white rounded-md shadow-lg" id="dropdown" style="display:none">
-                      <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Clothing</a>
-                      <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Electronics</a>
-                      <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Toys</a>
-                    </div>
+                  <button class="flex items-center justify-between w-full px-4 py-2 font-semibold text-white bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-gray" onclick="toggleDropdown()">
+                    <span class="mr-2">Category</span>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                      <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                  </button>
+                  <div class="absolute right-0 z-10 py-2 mt-1 bg-white rounded-md shadow-lg" id="dropdown" style="display:none">
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Clothing</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Electronics</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Toys</a>
                   </div>
-                  
+                </div>
+              </li>
               <li><a class="hover:text-gray-200" href="#">Home</a></li>
               <li><a class="hover:text-gray-200" href="#">Collections</a></li>
-              <li><a class="hover:text-gray-200" href="#">Contact Us</a></li>
+              <li><a class="hover:text-gray-200" href="{% url 'console'%}">Console</a></li>
             </ul>
+            
             <div class="hidden xl:flex items-center space-x-5">
               <a class="hover:text-gray-200" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
