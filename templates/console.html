@@ -66,11 +66,11 @@
     </section>
 
 
-
+<div class="product-container">
 
     {% for product in products %}
     {% if product.id == 1 %}
-        <div class="PS5">
+        <div class="card">
             <img class="PS5" src="{{ product.photo.url }}" alt="{{ product.name }}">
             <h2>{{ product.name }}</h2>
             <p>{{ product.description }}</p>
@@ -81,26 +81,28 @@
 
 {% for product in products %}
 {% if product.id == 2 %}
-<div class="Switch">
+<div class="card">
     <img class="Switch" src="{{ product.photo.url }}" alt="{{ product.name }}">
     <h2>{{ product.name }}</h2>
     <p>{{ product.description }}</p>
     <p>{{ product.price }}</p>
+</div>
     {% endif %}
 {% endfor %}
 
 
 {% for product in products %}
 {% if product.id == 3 %}
-<div class="Xbox">
+<div class="card">
     <img class="Xbox" src="{{ product.photo.url }}" alt="{{ product.name }}">
     <h2>{{ product.name }}</h2>
     <p>{{ product.description }}</p>
     <p>{{ product.price }}</p>
+</div>
     {% endif %}
 {% endfor %}
 
-
+</div>
 
 
 </body>
