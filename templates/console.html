@@ -7,17 +7,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>    
 
     <title>Document</title>
 </head>
 <body>
-    
+    <section class="relative mx-auto">
+        <nav class="flex justify-between bg-gray-900 text-white w-screen fixed top-0">
+          <div class="px-5 xl:px-12 py-6 flex w-full items-center">
+            <a class="text-3xl font-bold font-heading" href="#">
+              <img src="{% static 'Logo.png' %}" width="50" height="50">
+            </a>
+            
+            <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+                <div class="relative">
+                    <button class="flex items-center justify-between w-full px-4 py-2 font-semibold text-white bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-gray" onclick="toggleDropdown()">
+                      <span class="mr-2">Category</span>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M7 10l5 5 5-5z" />
+                      </svg>
+                    </button>
+                    <div class="absolute right-0 z-10 py-2 mt-1 bg-white rounded-md shadow-lg" id="dropdown" style="display:none">
+                      <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Clothing</a>
+                      <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Electronics</a>
+                      <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Toys</a>
+                    </div>
+                  </div>
+                  
+              <li><a class="hover:text-gray-200" href="#">Home</a></li>
+              <li><a class="hover:text-gray-200" href="#">Collections</a></li>
+              <li><a class="hover:text-gray-200" href="#">Contact Us</a></li>
+            </ul>
+            <div class="hidden xl:flex items-center space-x-5">
+              <a class="hover:text-gray-200" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </a>
+              <a class="flex items-center hover:text-gray-200" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span class="flex absolute -mt-5 ml-4">
+                  <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
+                </span>
+              </a>
+          <a class="flex items-center hover:text-gray-200" href="#">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+  </svg>
+</a>
+            </div>
+          </div>
+        </nav>
+    </section>
+
+
+
+
+
+
     {% for product in products %}
-    <div>
+    <div class="PS5">
+        <img class="PS5" src="{{ product.photo.url }}" alt="{{ product.name }}">
         <h2>{{ product.name }}</h2>
         <p>{{ product.description }}</p>
         <p>{{ product.price }}</p>
-        <img class="PS5" src="{{ product.photo.url }}" alt="{{ product.name }}">
     </div>
 {% endfor %}
 
