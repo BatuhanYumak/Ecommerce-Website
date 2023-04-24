@@ -101,40 +101,42 @@
 </div>
     {% endif %}
 {% endfor %}
-
 </div>
-
+<div class="product-container">
 {% for product in products %}
 {% if product.id == 4 %}
 <div class="card">
-    <img class="Steam-Deck" src="{{ product.photo.url }}" alt="{{ product.name }}">
-    <h2>{{ product.name }}</h2>
-    <p>{{ product.description }}</p>
-    <p>{{ product.price }}</p>
+  <img class="Steam-Deck" src="{{ product.photo.url }}" alt="{{ product.name }}">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p>{{ product.price }}</p>
 </div>
-    {% endif %}
+{% endif %}
 {% endfor %}
 
 {% for product in products %}
 {% if product.id == 5 %}
 <div class="card">
-    <img class="PSP" src="{{ product.photo.url }}" alt="{{ product.name }}">
-    <h2>{{ product.name }}</h2>
-    <p>{{ product.description }}</p>
-    <p>{{ product.price }}</p>
+  <img class="PSP" src="{{ product.photo.url }}" alt="{{ product.name }}">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p>{{ product.price }}</p>
 </div>
-    {% endif %} 
+{% endif %} 
 {% endfor %}
 
 {% for product in products %}
 {% if product.id == 6 %}
 <div class="card">
-    <img class="PS4" src="{{ product.photo.url }}" alt="{{ product.name }}">
-    <h2>{{ product.name }}</h2>
-    <p>{{ product.description }}</p>
-    <p>{{ product.price }}</p>
+  <img class="PS4" src="{{ product.photo.url }}" alt="{{ product.name }}">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p>{{ product.price }}</p>
 </div>
-    {% endif %}
+{% endif %}
 {% endfor %}
+</div>
+
+
 </body>
 </html>
