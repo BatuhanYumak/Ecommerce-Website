@@ -68,16 +68,20 @@
 
 
 
-
-
     {% for product in products %}
-    <div class="PS5">
-        <img class="PS5" src="{{ product.photo.url }}" alt="{{ product.name }}">
-        <h2>{{ product.name }}</h2>
-        <p>{{ product.description }}</p>
-        <p>{{ product.price }}</p>
-    </div>
+    {% if product.id == 1 %}
+        <div class="PS5">
+            <img class="PS5" src="{{ product.photo.url }}" alt="{{ product.name }}">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p>{{ product.price }}</p>
+        </div>
+    {% endif %}
 {% endfor %}
+
+{% for product %}
+
+
 
 </body>
 </html>
