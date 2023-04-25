@@ -48,17 +48,10 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </a>
-              {% comment %} <a class="flex items-center hover:text-gray-200" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </a> {% endcomment %}
-          {% comment %} <a class="flex items-center hover:text-gray-200" href="#">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-  </svg>
-</a> {% endcomment %}
-
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
+            </div>
 
             </div>
           </div>
@@ -78,38 +71,32 @@
       </div>
       
 
-        
-        <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="{% static 'GalaxyBuds2.avif' %}" class="absolute block w-40 h-40 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-          <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="GalaxyBuds2">Buy Now</button>
-        </div>
-        
-        <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="{% static 'PS5.png' %}" class="absolute block w-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-          <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="PS5">Buy Now</button>
-        </div>
-        
-        <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="{% static 'GPU4090.png' %}" class="absolute block w-48 h-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-          <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="GPU4090">Buy Now</button>
-        </div>
-        
-        <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="{% static 'Samsung.avif' %}" class="absolute block w-48 h-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-          <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="Samsung">Buy Now</button>
-        </div>
-        
-        <div  class="cart bg-green-500">
-          <h2>Shopping Cart</h2>
-          <div class="cart-items"></div>
-          <div class="cart-total"></div>
-        </div>
-        
+    <!-- Item 2 -->
+<div class="hidden duration-700 ease-in-out" data-carousel-item>
+  <img src="{% static 'GalaxyBuds2.avif' %}" class="absolute block w-40 h-40 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="GalaxyBuds2">Buy Now</button>
+</div>
 
+<!-- Item 3 -->
+<div class="hidden duration-700 ease-in-out" data-carousel-item>
+  <img src="{% static 'PS5.png' %}" class="absolute block w-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="PS5">Buy Now</button>
+</div>
+
+<!-- Item 4 -->
+<div class="hidden duration-700 ease-in-out" data-carousel-item>
+  <img src="{% static 'GPU4090.png' %}" class="absolute block w-48 h-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="GPU4090">Buy Now</button>
+</div>
+
+<!-- Item 5 -->
+<div class="hidden duration-700 ease-in-out" data-carousel-item>
+  <img src="{% static 'Samsung.avif' %}" class="absolute block w-48 h-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="Samsung">Buy Now</button>
+</div>
+
+    
+      
       <!-- Slider indicators -->
       <div
         class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2"
