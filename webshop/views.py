@@ -16,3 +16,8 @@ def console(request):
     context = {'products': products}
     return render(request, 'console.html', context)
 
+
+def index(request):
+    products = Product.objects.all()
+    context = {'products': products}
+    return render(request, 'index.html', context)

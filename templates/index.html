@@ -50,7 +50,7 @@
               </a>
               <div class="row">
                 <div class="col">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
+                  {% comment %} <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div> {% endcomment %}
             </div>
 
             </div>
@@ -65,21 +65,37 @@
       >
        <!-- Item 1 -->
        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800"></span>
-        <img src="{% static 'JBL_discount.avif' %}" class="absolute block w-48 h-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">
+
+                 
+{% for product in products %}
+{% if product.id == 7 %}
+<div class="card">
+  <img class="JBL" src="{{ product.photo.url}}" alt="{{ product.name }}">  
+</div>
+{% endif %} 
+{% endfor %}
+        </span>
         <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="PS5">Buy Now</button>
 </div>
-      
   
 
     <!-- Item 2 -->
 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-  <img src="{% static 'GalaxyBuds2.avif' %}" class="absolute block w-40 h-40 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+{% for product in products %}
+{% if product.id == 8 %}
+<div class="card">
+  <img class="Buds2" src="{{ product.photo.url}}" alt="{{ product.name }}">
+</div>
+{% endif %}
+{% endfor %}
+
+
   <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="GalaxyBuds2">Buy Now</button>
 </div>
 
 <!-- Item 3 -->
-<div class="hidden duration-700 ease-in-out" data-carousel-item>
+<div class="hidden duration-700 eas%e-in-out" data-carousel-item>
   <img src="{% static 'PS5.png' %}" class="absolute block w-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
   <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="PS5">Buy Now</button>
 </div>
@@ -187,6 +203,8 @@
     </div>
 
 
+
+       
 
     
 </body>
