@@ -14,6 +14,10 @@ from pathlib import Path
 import os
 
 
+# from dotenv import load_dotenv
+# import os
+# from pathlib import Path
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webshop',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -79,10 +84,18 @@ WSGI_APPLICATION = 'my_webshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':  'webshop',
+        'USER':   'bit_academy',
+        'PASSWORD': 'bit_academy',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTION': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLE"
+        }
     }
 }
+
 
 
 # Password validation
@@ -128,3 +141,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"), ]
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
