@@ -28,12 +28,13 @@ def contact(request):
     return HttpResponse(template.render())
 
 def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # do something after form is submitted
-    else:
-        form = ContactForm()
+        if request.method == 'POST':
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                form.save()
+                # do something after form is submitted
+        else:
+            form = ContactForm()
 
-    return render(request, 'contact.html', {'form': form})
+        return render(request, 'contact.html', {'form': form})
+
