@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from products.models import Product
 from contactform.models import ContactForm
 
+
+
 def index (request):
     template = loader.get_template('index.html')
     return HttpResponse(template.render())
@@ -27,6 +29,7 @@ def contact(request):
     template = loader.get_template('contact.html')
     return HttpResponse(template.render())
 
+
 def contact(request):
         if request.method == 'POST':
             form = ContactForm(request.POST)
@@ -37,4 +40,3 @@ def contact(request):
             form = ContactForm()
 
         return render(request, 'contact.html', {'form': form})
-
