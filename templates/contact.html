@@ -15,17 +15,25 @@
 </head>
 <body>
     
-    <form method="post">
+    <form method="post" action="">
         {% csrf_token %}
-        {{ form.as_p }}
         
-        <input type="submit" value="Submit">
-
+        <label for="id_name">Name:</label>
+        {{ form.name }}
+        
+        <br>
+        
+        <label for="id_email">Email:</label>
+        {{ form.email }}
+        
+        <br>
+        
+        <label for="id_message">Message:</label>
+        {{ form.message }}
+        
+        <br>
+        <br>
+        <button type="submit">Verzenden</button>
      </form>
-    
-     
-    
-
-
 </body>
 </html>
