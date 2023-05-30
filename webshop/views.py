@@ -23,21 +23,18 @@ def index(request):
     context = {'products': products}
     return render(request, 'index.html', context)
 
-def succes(request):
-    template = loader.get_template('succes.html')
-    return HttpResponse(template.render())
-
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             # Process the form data
             pass
-            return redirect('success')
+            return redirect('succes')
     else:
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
 
-def success(request):
-   return HttpResponse('Success!')
+def succes(request):
+    template = loader.get_template('succes.html')
+    return HttpResponse(template.render())
 
