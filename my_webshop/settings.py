@@ -149,9 +149,3 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"), ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'live.smtp.mailtrap.io'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'justyumak@gmail.com'
-EMAIL_HOST_PASSWORD = 'example_password'
-EMAIL_USE_TLS = True

@@ -65,3 +65,15 @@ footer {
   margin: 1rem;
   padding: 1rem;
 }
+
+
+.professional-background {
+  background-color: lightblue;
+  background-image: url('path/to/your/background-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* Increase the margin bottom to add more space */
+}
