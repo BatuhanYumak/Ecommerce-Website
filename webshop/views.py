@@ -34,9 +34,10 @@ def contact(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
+            subject = form.cleaned_data['subject']
             
             # Sla de gegevens op in de database
-            entry = ContactModel(name=name, email=email, message=message)
+            entry = ContactModel(name=name, email=email, message=message , subject=subject)
             entry.save()
 
             return redirect('succes')

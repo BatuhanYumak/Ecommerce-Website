@@ -68,7 +68,8 @@ footer {
 
 
 .professional-background {
-  background-color: lightblue;
+  /* background-color: gray; */
+  background-color: cornflowerblue;
   background-image: url('path/to/your/background-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -76,4 +77,16 @@ footer {
 
 .form-group {
   margin-bottom: 1.5rem; /* Increase the margin bottom to add more space */
+}
+
+
+.center-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+textarea {
+  resize: none;
 }

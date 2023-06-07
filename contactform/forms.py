@@ -10,4 +10,5 @@ class ContactForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': ''}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': ''}),
             'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': ''}),
+            'subject': forms.TextInput(attrs={'class': 'form-control', 'placeholder': ''}),
         }
