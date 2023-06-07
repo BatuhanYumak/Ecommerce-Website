@@ -45,6 +45,8 @@ def contact(request):
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
 
+
+
 def succes(request):
     succes_message = "Het formulier is succesvol verstuurd!"  # Succesbericht
     return render(request, 'succes.html', {'succes_message': succes_message})      
