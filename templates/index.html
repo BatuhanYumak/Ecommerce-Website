@@ -106,13 +106,6 @@
   <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="GPU4090">Buy Now</button>
 </div>
 
-<!-- Item 5 -->
-{% comment %} <div class="hidden duration-700 ease-in-out" data-carousel-item>
-  <img src="{% static 'Samsung.avif' %}" class="absolute block w-48 h-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="Samsung">Buy Now</button>
-</div> {% endcomment %}
-
-    
       
       <!-- Slider indicators -->
       <div
@@ -200,10 +193,10 @@
           <span class="sr-only">Next</span>
         </span>
       </button>
-    </div>
+    {% comment %} </div> {% endcomment %}
 
     <footer class="bg-white rounded-lg shadow dark:bg-gray-900 fixed bottom-0 left-0 w-[98vw]">
-      <div class="mx-auto">
+      <div class="mx-auto flex-grow">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
             <img src="{% static 'Logo.png' %}" class="h-8 mr-3" alt="Flowbite Logo" />
@@ -218,7 +211,6 @@
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       </div>
     </footer>
-    
     
 </body>
 </html>
