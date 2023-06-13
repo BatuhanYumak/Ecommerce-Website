@@ -6,14 +6,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script src="{% static 'script.js' %}"></script>    
-
-    <title>Console</title>
+    <link rel="stylesheet" type="text/css" href=" {% static 'main.css' %} ">   
+     <title>Console</title>
 </head>
-<body>
+<body class="jemoeder">
+
     <section class="relative mx-auto">
         <nav class="flex justify-between bg-gray-900 text-white w-screen fixed top-0">
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
@@ -22,23 +22,11 @@
             </a>
             
             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <div class="relative">
-                    <button class="flex items-center justify-between w-full px-4 py-2 font-semibold text-white bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-gray" onclick="toggleDropdown()">
-                      <span class="mr-2">Category</span>
-                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                        <path d="M7 10l5 5 5-5z" />
-                      </svg>
-                    </button>
-                    <div class="absolute right-0 z-10 py-2 mt-1 bg-white rounded-md shadow-lg" id="dropdown" style="display:none">
-                      <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Clothing</a>
-                      <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Electronics</a>
-                      <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Toys</a>
-                    </div>
-                  </div>
+    
                   
-              <li><a class="hover:text-gray-200" href="#">Home</a></li>
-              <li><a class="hover:text-gray-200" href="#">Collections</a></li>
-              <li><a class="hover:text-gray-200" href="#">Contact Us</a></li>
+              <li><a href="{% url 'index' %}" class="hover:text-gray-200" href="#">Home</a></li>
+              <li><a href="{% url 'contact'%}" class="hover:text-gray-200" href="#">Contact</a></li>
+              <li><a href="{% url 'console' %}" class="hover:text-gray-200" href="#">Console</a></li>
             </ul>
             <div class="hidden xl:flex items-center space-x-5">
               <a class="hover:text-gray-200" href="#">

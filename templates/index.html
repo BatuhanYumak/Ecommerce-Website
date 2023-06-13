@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
-    <script src="{% static 'script.js' %}"></script>
     <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css" />
 
     <title>Home</title>
@@ -22,24 +21,10 @@
             </a>
             
             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-              <li class="flex items-center">
-                <div class="relative">
-                  <button class="flex items-center justify-between w-full px-4 py-2 font-semibold text-white bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-gray" onclick="toggleDropdown()">
-                    <span class="mr-2">Category</span>
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                      <path d="M7 10l5 5 5-5z" />
-                    </svg>
-                  </button>
-                  <div class="absolute right-0 z-10 py-2 mt-1 bg-white rounded-md shadow-lg" id="dropdown" style="display:none">
-                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Clothing</a>
-                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Electronics</a>
-                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Toys</a>
-                  </div>
-                </div>
-              </li>
+          
               <li><a class="hover:text-gray-200" href="#">Home</a></li>
-              <li><a class="hover:text-gray-200" href="#">Collections</a></li>
               <li><a class="hover:text-gray-200" href="{% url 'console'%}">Console</a></li>
+              <li><a class="hover:text-gray-200" href="{% url 'contact'%}">Contact</a></li>
             </ul>
             
             <div class="hidden xl:flex items-center space-x-5">
@@ -50,7 +35,6 @@
               </a>
               <div class="row">
                 <div class="col">
-                  {% comment %} <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div> {% endcomment %}
             </div>
 
             </div>
@@ -58,154 +42,57 @@
         </nav>
     </section>
 
-    <div id="default-carousel" class="relative" data-carousel="static">
-      <!-- Carousel wrapper -->
-      <div
-        class="relative h-56 overflow-hidden m-auto rounded-lg md:h-96 max-w-lg"
-      >
-       <!-- Item 1 -->
-       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">
+    <div class="product-container">
 
-                 
-{% for product in products %}
-{% if product.id == 7 %}
-<div class="card">
-  <img class="JBL" src="{{ product.photo.url}}" alt="{{ product.name }}">  
-</div>
-{% endif %} 
-{% endfor %}
-        </span>
-        <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="PS5">Buy Now</button>
-</div>
-  
-
-    <!-- Item 2 -->
-<div class="hidden duration-700 ease-in-out" data-carousel-item>
-{% for product in products %}
-{% if product.id == 8 %}
-<div class="card">
-  <img class="Buds2" src="{{ product.photo.url}}" alt="{{ product.name }}">
-</div>
-{% endif %}
-{% endfor %}
-
-
-  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="GalaxyBuds2">Buy Now</button>
-</div>
-
-<!-- Item 3 -->
-<div class="hidden duration-700 eas%e-in-out" data-carousel-item>
-  <img src="{% static 'PS5.png' %}" class="absolute block w-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="PS5">Buy Now</button>
-</div>
-
-<!-- Item 4 -->
-<div class="hidden duration-700 ease-in-out" data-carousel-item>
-  <img src="{% static 'GPU4090.png' %}" class="absolute block w-48 h-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="GPU4090">Buy Now</button>
-</div>
-
-<!-- Item 5 -->
-{% comment %} <div class="hidden duration-700 ease-in-out" data-carousel-item>
-  <img src="{% static 'Samsung.avif' %}" class="absolute block w-48 h-48 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full absolute bottom-0 right-0 m-4 add-to-cart" data-product-name="Samsung">Buy Now</button>
-</div> {% endcomment %}
-
-    
-      
-      <!-- Slider indicators -->
-      <div
-        class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2"
-      >
-        <button
-          type="button"
-          class="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 1"
-          data-carousel-slide-to="0"
-        ></button>
-        <button
-          type="button"
-          class="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 2"
-          data-carousel-slide-to="1"
-        ></button>
-        <button
-          type="button"
-          class="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 3"
-          data-carousel-slide-to="2"
-        ></button>  
-        <button
-          type="button"
-          class="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 3"
-          data-carousel-slide-to="2"
-        ></button>
-      </div>
-      <!-- Slider controls -->
-      <button
-        type="button"
-        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-prev
-      >
-        <span
-          class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-        >
-          <svg
-            aria-hidden="true"
-            class="w-5 h-5 text-white sm:w-6 sm:h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 19l-7-7 7-7"
-            ></path>
-          </svg>
-          <span class="sr-only">Previous</span>
-        </span>
-      </button>
-      <button
-        type="button"
-        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-next
-      >
-        <span
-          class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-        >
-          <svg
-            aria-hidden="true"
-            class="w-5 h-5 text-white sm:w-6 sm:h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"
-            ></path>
-          </svg>
-          <span class="sr-only">Next</span>
-        </span>
-      </button>
+    {% for product in products %}
+    {% if product.id == 9 %}
+    <div class="card">
+        <img class="GamePC" src="{{ product.photo.url }}" alt="{{ product.name }}">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
     </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+    
+
+    {% for product in products %}
+    {% if product.id == 8 %}
+    <div class="card">
+        <img class="GalaxyBuds" src="{{ product.photo.url }}" alt="{{ product.name }}">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+
+    </div>
+    {% endif %}
+    
+        {% endfor %}
 
 
+    {% for product in products %}
+    {% if product.id == 7 %}
+    <div class="card">
+        <img class="JBLHeadphone" src="{{ product.photo.url }}" alt="{{ product.name }}">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+        {% endif %}
+    {% endfor %}
 
-       
-
+    {% for product in products %}
+    {% if product.id == 10 %}
+    <div class="card">
+        <img class="GalaxyWatch" src="{{ product.photo.url }}" alt="{{ product.name }}">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+        {% endif %}
+    {% endfor %}
+    </div>
+    
+  
     
 </body>
 </html>
