@@ -57,3 +57,7 @@ textarea {
 }
 
 
+.custom-button-2:hover {
+  transform: scale(1.1);
+}
+ 
